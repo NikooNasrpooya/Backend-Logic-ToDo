@@ -6,46 +6,46 @@ The focus is on:
 
 Fetching and sending data with Axios
 
-<h1> ⚙ How It Works </h1>
-<h2> Axios instance (http.ts) </h2>
+<h3> ⚙ How It Works </h3>
+<h4> Axios instance (http.ts) </h4>
 
 Configures the base URL for the API
 Adds optional interceptors for logging and error handling
 
-<h2> Type definitions (todo.ts) <h2>
+<h4> Type definitions (todo.ts) </h4>
 
 Ensures API responses and requests are strongly typed
 Helps catch type mismatches during development
 
-<h2> Service layer (todosService.ts) <h2>
+<h4> Service layer (todosService.ts) </h4>
 
 Contains clean, reusable async functions for each API action:
 listTodos(limit?: number)
 
-<h2> getTodo(id: number) <h2>
+<h4> getTodo(id: number) <h4>
 
 createTodo(input: CreateTodoInput)
 updateTodo(id: number, patch: Partial<Todo>)
 deleteTodo(id: number)
 
-<h2> Entry point (index.ts) <h2>
+<h4> Entry point (index.ts) </h4>
 
 Calls the service functions and logs results to the console
 Serves as a quick test to verify that the backend logic works
 
-<h1> 🛠 Requirements </h1>
+<h3> 🛠 Requirements </h3>
 
 Node.js (v18+ recommended)
 npm or yarn
 
-<h1> 🚀 Setup & Run </h1>
+<h3> 🚀 Setup & Run </h3>
 
-<h2> Clone this repository </h2>
+<h4> Clone this repository </h4>
 
 git clone <your-repo-url>
 cd axios-ts-demo
 
-<h2> Install dependencies </h2>
+<h4> Install dependencies </h4>
 
 npm install
 Run the demo
