@@ -1,6 +1,6 @@
-import { api } from "./apiClient";
-import type { NewTodo, Todo, UpdateTodo } from "./types/todo";
-import { toApiError } from "./utils/errors";
+import { api } from "./apiClient.js";
+import type { NewTodo, Todo, UpdateTodo } from "./types/todo.js";
+import { toApiError } from "./utils/errors.js";
 
 /**
  * Service layer: all Todo-related calls live here.

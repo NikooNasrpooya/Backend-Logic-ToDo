@@ -1,60 +1,80 @@
-Axios + TypeScript Backend Logic
-📌 Overview
-This project demonstrates how to implement clean and reusable network/API calls using Axios in TypeScript.
+# Backend Logic (Axios + TypeScript)
 
-The focus is on:
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)
+![Axios](https://img.shields.io/badge/Axios-HTTP%20Client-brightgreen?style=flat-square&logo=axios)
+![Node.js](https://img.shields.io/badge/Node.js-18.x-green?style=flat-square&logo=node.js)
+![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)
 
-Fetching and sending data with Axios
+---
 
-<h3> ⚙ How It Works </h3>
-<h4> Axios instance (http.ts) </h4>
+## 📖 Overview
+This project demonstrates making a network/API call using **Axios** in **TypeScript**.  
+The objective is to showcase:
+- Fetching data from a public API
+- Using **TypeScript** interfaces for strong typing
+- Structuring code with a dedicated service layer
+- Writing reusable and maintainable backend logic
 
-Configures the base URL for the API
-Adds optional interceptors for logging and error handling
+---
 
-<h4> Type definitions (todo.ts) </h4>
+## 🚀 Features
+✅ Fetches data from a **public API** (`JSONPlaceholder`)  
+✅ Implements **TypeScript interfaces** for type safety  
+✅ Organized into service-based architecture  
+✅ Clean error handling and logging  
 
-Ensures API responses and requests are strongly typed
-Helps catch type mismatches during development
+---
 
-<h4> Service layer (todosService.ts) </h4>
+## 🛠️ Installation & Running
 
-Contains clean, reusable async functions for each API action:
-listTodos(limit?: number)
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/NikooNasrpooya/Backend-Logic-ToDo.git
+cd Backend-Logic-ToDo
+```
 
-<h4> getTodo(id: number) <h4>
-
-createTodo(input: CreateTodoInput)
-updateTodo(id: number, patch: Partial<Todo>)
-deleteTodo(id: number)
-
-<h4> Entry point (index.ts) </h4>
-
-Calls the service functions and logs results to the console
-Serves as a quick test to verify that the backend logic works
-
-<h3> 🛠 Requirements </h3>
-
-Node.js (v18+ recommended)
-npm or yarn
-
-<h3> 🚀 Setup & Run </h3>
-
-<h4> Clone this repository </h4>
-
-git clone <your-repo-url>
-cd axios-ts-demo
-
-<h4> Install dependencies </h4>
-
+### 2️⃣ Install Dependencies
+```bash
 npm install
-Run the demo
+```
+
+### 3️⃣ Run the Project
+```bash
 npm run start
+```
 
-This will:
+---
 
-Fetch the first 3 todos
-Get details for a specific todo
-Create a new todo
-Update it
-Delete it
+## ⚙️ How It Works
+**`services/todoService.ts`**
+```ts
+import axios from "axios";
+import { Todo } from "../types/todo";
+
+const API_URL = "https://jsonplaceholder.typicode.com/todos";
+
+export const fetchTodos = async (): Promise<Todo[]> => {
+  const response = await axios.get<Todo[]>(API_URL);
+  return response.data;
+};
+```
+
+**`index.ts`**
+```ts
+import { fetchTodos } from "./services/todoService";
+
+fetchTodos()
+  .then((todos) => console.log(todos))
+  .catch((err) => console.error("Error fetching todos:", err));
+```
+
+---
+
+## 📸 Screenshots / Output
+
+**Console Output:**
+
+
+<img src="./assets/ConsoleOutput.png" alt="Console Demo" width="500"/>
+
+---
