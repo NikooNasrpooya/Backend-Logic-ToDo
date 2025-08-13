@@ -9,7 +9,7 @@ export const api: AxiosInstance = axios.create({
 
 // Example: simple request/response logging (non-noisy)
 api.interceptors.request.use((config) => {
-  // You can add headers, auth, correlation IDs, etc. here
+  
   return config;
 });
 
