@@ -35,7 +35,7 @@ export async function createTodo(payload: NewTodo): Promise<Todo> {
 
 export async function updateTodo(id: number, patch: UpdateTodo): Promise<Todo> {
   try {
-    // JSONPlaceholder supports PATCH; use PUT if your API prefers full updates
+    
     const res = await api.patch<Todo>(`/todos/${id}`, patch);
     return res.data;
   } catch (err) {
