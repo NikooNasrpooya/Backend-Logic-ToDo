@@ -1,7 +1,7 @@
 import axios, { type AxiosInstance } from "axios";
 
 // Single axios instance with sensible defaults.
-// Swap baseURL to target any other public API.
+
 export const api: AxiosInstance = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com",
   timeout: 10_000
